@@ -1,8 +1,14 @@
 <?php
 include "../koneksi.php";
+
+session_start();
+if(!isset($_SESSION['nik'])){
+  header('Location:../login/login.php');
+}
+
 $status = '0';
 $isi = $_POST['isi_laporan'];
-$nik = '243534543';
+$nik = $_SESSION['nik'];
 $nama_foto = $_FILES['foto']['name'];
 $asal_foto =$_FILES['foto']['tmp_name'];
 $tanggal = date('Y-m-d');

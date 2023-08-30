@@ -44,7 +44,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
 
 
           <div style="width: 100%; justify-content: center;">
-                <table class="table" style="background-color: #ffff; border-radius:4px;" width="100px">
+                <table class="table" style="background-color: #ffff; border-radius:4px; text-align:center;" width="100px">
                   <thead>
 
                     <tr>
@@ -67,7 +67,7 @@ $result = mysqli_query($koneksi, "SELECT * FROM pengaduan");
                           <td><img height="80px" width="100px" src="../image/<?=$user_data['foto']?>"></td>   
                           <?php
                           echo "<td>".$user_data['status']."</td>";    
-                          echo "<td><a href='update.php?id_pengaduan=$user_data[id_pengaduan]'>Edit</a>|<a href='delete.php?id_pengaduan=$user_data[id_pengaduan]'>Delete</a></td></tr>";        
+                          echo "<td><a href='update.php?id_pengaduan=$user_data[id_pengaduan]' class='btn btn-success '>Edit</a>  <a href='delete.php?id_pengaduan=$user_data[id_pengaduan]'class='btn btn-danger'>Delete</a></td></tr>";        
                         }
                       ?>
                     </tbody>

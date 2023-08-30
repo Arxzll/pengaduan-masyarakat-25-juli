@@ -50,7 +50,7 @@ if(!isset($_SESSION['nik'])){
                 <label for="exampleFormControlTextarea1" class="form-label" style="color: white;">Foto</label>
                 <input name="foto" type="file" style="color: white;">
               </div>
-              <button type="submit">kirim</button>
+              <button type="submit" class="btn btn-success">kirim</button>
               </form>
             </div>
           

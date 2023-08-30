@@ -38,6 +38,7 @@
             </div>
           </div>
           <div class="container" style="width: 100%;">
+          <h1 class="text-center mt-4" style="color: aliceblue;"><?php echo "<h1 style='text-align:center; color:aliceblue;'>Selamat Datang, " . $_SESSION['username'] ."!". "</h1>"; ?></h1>
               <h3 class="text-center mt-4" style="color: aliceblue;">Layanan Aspirasi dan Pengaduan Online Rakyat
               </h3>
               <h4 class="text-center" style="color: aliceblue;">Sampaikan laporan Anda langsung kepada instansi pemerintah berwenang</h4>

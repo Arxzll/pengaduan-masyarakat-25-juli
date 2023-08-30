@@ -19,14 +19,28 @@ if($data > 0){
   header("location: ../Halaman Utama/tampilan.php");
 }else {
 
-  $proses_login = $koneksi->query("SELECT * FROM `petugas` WHERE username ='$username' AND password='$password';");
+$proses_login = $koneksi->query("SELECT * FROM `petugas` WHERE username ='$username' AND password='$password' AND level='petugas';");
+$data = mysqli_num_rows($proses_login);
+if($data > 0){
+  // echo "Masyarakat";
+  // die();
+  $data = mysqli_fetch_array($proses_login);
+  $_SESSION['username'] = $data['username'];
+  $_SESSION['id_petugas'] = $data['id_petugas'];
+  $_SESSION['level'] ='petugas';  
+  header("location: ../petugas/tampilan.php");
+  exit();
+}else {
+
+  $proses_login = $koneksi->query("SELECT * FROM `petugas` WHERE username ='$username' AND password='$password' AND level='admin';");
   $data = mysqli_num_rows($proses_login);
   if($data > 0){
     // echo "admin";
     // die();
   
     $data = mysqli_fetch_array($proses_login);
-    $_SESSION['username'] = $data['username'];
+    $_SESSION['username'] = $data['username'];       
+    $_SESSION['id_petugas'] = $data['id_petugas'];
     $_SESSION['level'] = $data['level'];
       header("location: ../admin/tampilan.php");
   }
@@ -34,7 +48,7 @@ if($data > 0){
     echo "akun tidak ada";
   }
   } 
-
+}
 ?>
 
 
